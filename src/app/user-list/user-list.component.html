@@ -1,0 +1,30 @@
+<div>  
+  <h3>Users list</h3>  
+
+  <div class="panel panel-default">  
+      <div class="panel-body">  
+          <table class="table table-striped table-bordered">  
+              <thead>  
+                  <tr>  
+                      <th>Id</th>  
+                      <th>Name</th>  
+                      <th>Username</th>  
+                      <th>Email</th>  
+                      <th>Phone</th>  
+                      <th>Website</th>
+                  </tr>  
+              </thead>  
+              <tbody>  
+                  <tr *ngFor="let item of users">  
+                      <td>{{ item.id }}</td>  
+                      <td>{{ item.name }}</td>  
+                      <td>{{ item.username }}</td>  
+                      <td>{{ item.email }}</td>  
+                      <td>{{ item.phone }}</td>  
+                      <td>{{ item.website }}</td>
+                  </tr>  
+              </tbody>  
+          </table>
+      </div>  
+  </div> 
+</div>   
