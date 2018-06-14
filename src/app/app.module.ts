@@ -11,12 +11,14 @@ import { SingleUserComponent } from './single-user/single-user.component';
 import { FormsModule, ReactiveFormsModule } from '@angular/forms';
 import { RouterModule, Routes } from '@angular/router';
 import { HttpModule, Http, Response, RequestOptions, Headers } from '@angular/http';
+import { FourOhFourComponent } from './four-oh-four/four-oh-four.component';
 
 const appRoutes: Routes = [
   { path: 'users', component: UserListComponent },
-  { path: 'users/view/:id', component: SingleUserComponent },
-  { path: '', redirectTo: 'users', pathMatch:'full'},
-  { path: '**', redirectTo: 'users'}
+  { path: 'users/:id', component: SingleUserComponent },
+  { path: '', component: UserListComponent },
+  { path: 'not-found', component: FourOhFourComponent },
+  { path: '**', redirectTo: 'not-found'}
 ]
 
 @NgModule({
@@ -24,7 +26,8 @@ const appRoutes: Routes = [
     AppComponent,
     UserListComponent,
     HeaderComponent,
-    SingleUserComponent
+    SingleUserComponent,
+    FourOhFourComponent
   ],
   imports: [
     BrowserModule,
